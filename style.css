@@ -1,0 +1,26 @@
+#contenedor{
+    width: 100%;
+    height:300px;
+    background-color: goldenrod;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    align-content:end;
+}
+.elemento{
+    width: 200px;
+    height:100px;
+    background-color: floralwhite;
+    border: 5px solid rgb(157, 141, 171);
+}
+#el1{
+    order:3;
+    height: 20px;
+}
+#el2{
+    order:1;
+    height: 50px;
+}
+#el3{
+    order:2;
+}
