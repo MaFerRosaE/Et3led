@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Statics/listaDeTareas.css">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Lista de tareas</h1>
+    <button class="lista" id="añadir">Añadir tarea</button>
+    <button class="lista" id="eliminar">Eliminar tarea</button>
+    <div class="cuadroTarea"></div>
+</body>
+<script>
+    let cuadroTarea= document.getElementsByClassName('cuadroTarea')[0];
+    let numTarea= 0;
+    let botonDel= document.getElementById("eliminar");
+    let botonAdd= document.getElementById("añadir");
+    botonAdd.addEventListener("click",()=>{
+        numTarea+=1;
+        let tarea=document.createElement("div");
+        cuadroTarea.appendChild(tarea);
+        tarea.setAttribute("class", "tar");
+        tarea.setAttribute("id", numTarea);
+        tarea.append(`${numTarea} Tarea`);
+    });
+    botonDel.addEventListener("click", () =>{
+        if (numTarea >= 1)
+        {
+            let tareas= document.getElementsByClassName('tar');
+            cuadroTarea.removeChild(tareas[numTarea-1]);
+            numTarea-=1;
+        }
+    });
+</script>
+</html>
